@@ -1,9 +1,11 @@
 package ktk.bugdroid.jetpackcomposedemoapp
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -26,6 +28,10 @@ class MainActivity : ComponentActivity() {
                     Surface(modifier = Modifier.fillMaxSize(), color = Color.Black) {
                         // Content for the first part
                         Row(
+                            modifier = Modifier.clickable {
+                                Toast.makeText(this@MainActivity, "clicked", Toast.LENGTH_SHORT)
+                                    .show()
+                            },
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
